@@ -48,7 +48,7 @@ RUN apt-get update -y
 # Install apt packages
 RUN apt-get install -yq --no-install-recommends \
    google-chrome-stable \
-   mariadb-client \
+   mysql-client \
    nodejs \
    php7.2-bcmath \
    php7.2-curl \
