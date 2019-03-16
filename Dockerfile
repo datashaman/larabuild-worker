@@ -75,8 +75,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install bower brunch gulp-cli
 RUN npm install bower brunch gulp-cli -g
 
-RUN mkdir /workspace && chown ${BUILD_USER} /workspace
-WORKDIR /workspace
 USER ${BUILD_USER}
 
 # Install prestissimo composer package
