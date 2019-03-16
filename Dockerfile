@@ -1,11 +1,12 @@
 FROM ubuntu:18.04
 
 ARG BUILD_MIRROR="http://archive.ubuntu.com"
+ARG BUILD_UID=1001
 ARG BUILD_USER="webapp"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN useradd --shell /bin/bash -u 1000 -o -c "" -m ${BUILD_USER}
+RUN useradd --shell /bin/bash -u ${BUILD_UID} -o -c "" -m ${BUILD_USER}
 
 RUN [ -n "${BUILD_MIRROR}" ] && sed -i "s#http://za.archive.ubuntu.com#${BUILD_MIRROR}#g" /etc/apt/sources.list
 
