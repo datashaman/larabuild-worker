@@ -57,6 +57,7 @@ RUN apt-get install -yq --no-install-recommends \
    php7.2-gd \
    php7.2-imagick \
    php7.2-intl \
+   php7.2-mailparse \
    php7.2-mbstring \
    php7.2-mysql \
    php7.2-sqlite3 \
