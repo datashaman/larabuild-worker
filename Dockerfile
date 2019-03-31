@@ -55,6 +55,7 @@ RUN apt-get update -y \
         php7.2-gd \
         php7.2-imagick \
         php7.2-intl \
+        php7.2-mailparse \
         php7.2-mbstring \
         php7.2-mysql \
         php7.2-sqlite3 \
