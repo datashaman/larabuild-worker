@@ -44,28 +44,26 @@ RUN echo deb https://dl.yarnpkg.com/debian/ stable main > /etc/apt/sources.list.
 RUN echo deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main > /etc/apt/sources.list.d/google-chrome.list
 
 # Update apt repositories
-RUN apt-get update -y
-
-# Install apt packages
-RUN apt-get install -yq --no-install-recommends \
-   google-chrome-stable \
-   mysql-client \
-   nodejs \
-   php7.2-bcmath \
-   php7.2-curl \
-   php7.2-fpm \
-   php7.2-gd \
-   php7.2-imagick \
-   php7.2-intl \
-   php7.2-mbstring \
-   php7.2-mysql \
-   php7.2-sqlite3 \
-   php7.2-xml \
-   php7.2-zip \
-   php-memcached \
-   redis-tools \
-   xvfb \
-   yarn
+RUN apt-get update -y \
+    && apt-get install -yq --no-install-recommends \
+        google-chrome-stable \
+        mysql-client \
+        nodejs \
+        php7.2-bcmath \
+        php7.2-curl \
+        php7.2-fpm \
+        php7.2-gd \
+        php7.2-imagick \
+        php7.2-intl \
+        php7.2-mbstring \
+        php7.2-mysql \
+        php7.2-sqlite3 \
+        php7.2-xml \
+        php7.2-zip \
+        php-memcached \
+        redis-tools \
+        xvfb \
+        yarn
 
 COPY templates/php-fpm.conf /etc/php/7.2/fpm/php-fpm.conf
 RUN sed -i "s#%%BUILD_USER%%#${BUILD_USER}#g" /etc/php/7.2/fpm/php-fpm.conf
